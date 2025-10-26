@@ -64,6 +64,7 @@ export default {
 
       try {
         await authStore.login(email.value, password.value);
+        // Después del login exitoso, redirigir al home
         router.push('/');
       } catch (e) {
         error.value = e.response?.data?.message || e.message || 'Error al iniciar sesión';
